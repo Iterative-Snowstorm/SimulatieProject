@@ -1,0 +1,43 @@
+/* Stijl voor ontspanningstips pagina */
+.video-music, .moppen-generator, .darkmode-toggle, .ademhalingsoefening {
+    text-align: center;
+    margin: 40px auto;
+}
+
+/* Stijl voor de ademhalingsoefening animatie */
+.ademhaling {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    border-radius: 50%;
+    background-color: var(--red);
+    transition: transform 4s ease-in-out;
+}
+
+.adem-animatie {
+    transform: scale(1.5);
+}
+
+/* Dark mode styling */
+.darkmode {
+    background-color: black;
+    color: white;
+}
+
+.darkmode button {
+    background-color: white;
+    color: black;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: var(--red);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--blue);
+}
