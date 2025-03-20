@@ -281,8 +281,61 @@ ul a:hover {
     padding: 1rem;
     text-align: center;
     font-weight: var(--fw-bold);
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-    min-height: 100px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    min-height: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Hover effect */
+  .postit:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Enlarges the box when clicked */
+  .postit.open {
+    transform: scale(1.2);
+    background-color: var(--light-blue);
+    z-index: 9999; /* Ensures clicked post-it stays on top */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transform-origin: center center;
+  }
+  
+  .postit[data-category="Time Management"] {
+    background-color: #f9c74f; /* Yellow */
+  }
+  
+  .postit[data-category="Environmental Tips"] {
+    background-color: #90be6d; /* Green */
+  }
+  
+  .postit[data-category="Aanpak methode"] {
+    background-color: #f94144; /* Red */
+  }
+  
+  .postit[data-category="Studie wijze"] {
+    background-color: #277da1; /* Blue */
+  }
+  
+  .postit[data-category="Make it Fun"] {
+    background-color: #f3722c; /* Orange */
+  }
+  
+  /* Show content when post-it is clicked */
+  .postit.open .content {
+    display: block;
+  }
+  
+  .postit .content {
+    display: none;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    text-align: left;
   }
 
 /* 
