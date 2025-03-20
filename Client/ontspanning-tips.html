@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Studiegids - Ontspanning Tips</title>
-    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/ontspanning-tips.css">
+    <script defer src="script/ontspanning-tips.js"></script>
+
+
   </head>
   <body>
     <header>
@@ -58,6 +62,28 @@
         </div>
       </section>
 
+
+      <section class="video-music">
+        <h2>Rustgevende Video & Muziek</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1ZYbU82GVz4" title="Relaxing Music"></iframe>
+    </section>
+
+    <section class="moppen-generator">
+        <h2>Willekeurige Mop</h2>
+        <h5>Klik op de knop voor een mop!</h5>
+        <p id="mop"></p>
+        <button onclick="genereerMop()">Nieuwe Mop</button>
+    </section>
+
+    <section class="ademhalingsoefening">
+        <h2>Ademhalingsoefening</h2>
+        <p>Klik op de bol en volg de animatie om rustig te ademen.</p>
+        <div class="ademhaling"></div>
+    </section>
+</main>
+
+
+
       <div class="page-layout__divider"></div>
     </main>
     <footer>
@@ -90,5 +116,6 @@
         <!-- Bottom Footer -->
       </div>
     </div>
+    
   </body>
 </html>
