@@ -8,12 +8,6 @@
     --text-color: #333;
     --primary-color: #E30147;
     --secondary-color: #002757;
-
-    /* --blue: #002757;
-    --red: #E30147;
-    --light-blue: #9FDAF9;
-    --light-gray: #e9f3f8;
-    --gray: #333; */
     --gradient: linear-gradient(126.62deg, #e30046 0%, #721a57 100%);
 
     /* Pixel to REM conversions for consistent sizing */
@@ -47,8 +41,6 @@
 }
 
 .darkmode {
-    /* --dark-bg: #0D0F1A;
-    --dark-text: #D1D5E0; */
     --base-color: #0D0F1A;
     --base-variant: #101425;
     --text-color: #ffffff;
@@ -98,6 +90,7 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
+    z-index: 999;
 }
 
 #theme-switch svg {
@@ -162,6 +155,7 @@ nav {
 .navigation__top-bar small {
     font-size: var(--14px);
     line-height: var(--20px);
+    color: var(--text-color);
 }
 
 /* Navigation menu styling */
