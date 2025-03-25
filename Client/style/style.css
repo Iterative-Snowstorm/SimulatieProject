@@ -3,11 +3,17 @@
 
 :root {
     /* UCLL Branding Colors */
-    --blue: #002757;
+    --base-color: white;
+    --base-variant: #e8e9ed;
+    --text-color: #333;
+    --primary-color: #E30147;
+    --secondary-color: #002757;
+
+    /* --blue: #002757;
     --red: #E30147;
     --light-blue: #9FDAF9;
     --light-gray: #e9f3f8;
-    --gray: #333;
+    --gray: #333; */
     --gradient: linear-gradient(126.62deg, #e30046 0%, #721a57 100%);
 
     /* Pixel to REM conversions for consistent sizing */
@@ -41,8 +47,13 @@
 }
 
 .darkmode {
-    --dark-bg: #0D0F1A;
-    --dark-text: #D1D5E0;
+    /* --dark-bg: #0D0F1A;
+    --dark-text: #D1D5E0; */
+    --base-color: #0D0F1A;
+    --base-variant: #101425;
+    --text-color: #ffffff;
+    --primary-color: #E30147;
+    --secondary-color: #002757;
 }
 
 /* Resetting default margin, padding, and setting box-sizing to border-box */
@@ -57,7 +68,8 @@ body {
     font-family: "Readex Pro", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    color: var(--gray);
+    background-color: var(--base-color);
+    color: var(--text-color);
 }
 
 /* Main container with a max-width for layout consistency */
@@ -65,6 +77,43 @@ body {
     position: relative;
     max-width: var(--1280px);
     margin: 0 auto;
+}
+
+/* 
+========================================================================================================================
+            *****   Darkmode Button *****
+========================================================================================================================
+*/
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
 }
 
 /* 
@@ -85,7 +134,7 @@ nav {
 /* Site logo styling */
 .site-branding-logo {
     font-size: 2rem;
-    color: var(--red);
+    color: var(--primary-color);
     font-weight: var(--fw-black);
     list-style-type: none;
     text-decoration: none;
@@ -106,7 +155,7 @@ nav {
     align-items: center;
     gap: 1rem;
     margin-top: 1em;
-    color: var(--blue);
+    color: var(--secondary-color);
 }
 
 /* Adjusts the font size of small text in the navigation bar */
@@ -127,7 +176,7 @@ nav ul a {
     font-size: var(--18px);
     line-height: var(--30px);
     font-weight: 700;
-    color: var(--blue);
+    color: var(--secondary-color);
     list-style-type: none;
     text-decoration: none;
     margin-left: 3.125rem;
@@ -135,9 +184,9 @@ nav ul a {
 
 /* Hover effect for navigation links */
 ul a:hover {
-    color: var(--red);
+    color: var(--primary-color);
     padding-bottom: 0.3em;
-    border-bottom: 3px solid var(--red);
+    border-bottom: 3px solid var(--primary-color);
     transition: ease-in-out;
 }
 
@@ -208,7 +257,7 @@ ul a:hover {
 .page-layout__content-wrapper h1 {
     font-size: 50px;
     line-height: 60px;
-    color: var(--red);
+    color: var(--primary-color);
     font-weight: 700;
     margin-bottom: var(--8px);
 }
@@ -245,8 +294,8 @@ ul a:hover {
 /* Call-to-action hover effect */
 .page-layout__call-to-action:hover {
     background: transparent;
-    color: var(--red);
-    border: 1px solid var(--red);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
     transform: translateY(-2px);
     transition: transform 0.3s ease-in-out;
 }
