@@ -3,11 +3,12 @@
 
 :root {
     /* UCLL Branding Colors */
-    --base-color: white;
-    --base-variant: #e8e9ed;
+    --base-color: #ffffff;
+    --base-variant: #F2FAFE;
     --text-color: #333;
     --primary-color: #E30147;
     --secondary-color: #002757;
+    --nav-text-color: #002757;
     --gradient: linear-gradient(126.62deg, #e30046 0%, #721a57 100%);
 
     /* Pixel to REM conversions for consistent sizing */
@@ -46,6 +47,7 @@
     --text-color: #ffffff;
     --primary-color: #E30147;
     --secondary-color: #002757;
+    --nav-text-color: #ffffff;
 }
 
 /* Resetting default margin, padding, and setting box-sizing to border-box */
@@ -170,7 +172,7 @@ nav ul a {
     font-size: var(--18px);
     line-height: var(--30px);
     font-weight: 700;
-    color: var(--secondary-color);
+    color: var(--nav-text-color);
     list-style-type: none;
     text-decoration: none;
     margin-left: 3.125rem;
