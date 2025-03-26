@@ -1,0 +1,626 @@
+/* Importing the Readex Pro font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap");
+
+:root {
+  /* UCLL Branding Colors */
+  --blue: #002757;
+  --red: #e30147;
+  --light-blue: #9fdaf9;
+  --light-gray: #e9f3f8;
+  --gray: #333;
+  --gradient: linear-gradient(126.62deg, #e30046 0%, #721a57 100%);
+
+  /* Pixel to REM conversions for consistent sizing */
+  --8px: 0.5rem;
+  --14px: 0.875rem;
+  --16px: 1rem;
+  --18px: 1.125rem;
+  --20px: 1.25rem;
+  --22px: 1.375rem;
+  --26px: 1.625rem;
+  --30px: 1.875rem;
+  --32px: 2rem;
+  --34px: 2.125rem;
+  --35px: 2.188rem;
+  --36px: 2.25rem;
+  --42px: 2.625rem;
+  --50px: 3.125rem;
+  --60px: 3.75rem;
+  --90px: 5.625rem;
+  --1280px: 80rem;
+
+  /* Font Weights */
+  --fw-extra-light: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+  --fw-black: 900;
+}
+
+.darkmode {
+  --dark-bg: #0d0f1a;
+  --dark-text: #d1d5e0;
+}
+
+/* Resetting default margin, padding, and setting box-sizing to border-box */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Setting base typography and color */
+body {
+  font-family: "Readex Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: var(--gray);
+}
+
+/* Main container with a max-width for layout consistency */
+.container {
+  position: relative;
+  max-width: var(--1280px);
+  margin: 0 auto;
+}
+
+/* 
+========================================================================================================================
+            *****   NAVIGATION LAYOUT *****
+========================================================================================================================
+*/
+
+/* Navigation bar styling */
+nav {
+  margin-top: 1rem;
+  margin-bottom: 2.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Site logo styling */
+.site-branding-logo {
+  font-size: 2rem;
+  color: var(--red);
+  font-weight: var(--fw-black);
+  list-style-type: none;
+  text-decoration: none;
+}
+
+/* Logo image styling */
+.site-branding-logo-img {
+  max-width: 100%;
+  height: var(--35px);
+  cursor: pointer;
+}
+
+/* Top bar navigation layout */
+.navigation__top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1em;
+  color: var(--blue);
+}
+
+/* Adjusts the font size of small text in the navigation bar */
+.navigation__top-bar small {
+  font-size: var(--14px);
+  line-height: var(--20px);
+}
+
+/* Navigation menu styling */
+nav ul {
+  display: flex;
+  justify-content: end;
+  list-style: none;
+}
+
+/* Navigation links styling */
+nav ul a {
+  font-size: var(--18px);
+  line-height: var(--30px);
+  font-weight: 700;
+  color: var(--blue);
+  list-style-type: none;
+  text-decoration: none;
+  margin-left: 3.125rem;
+}
+
+/* Hover effect for navigation links */
+ul a:hover {
+  color: var(--red);
+  padding-bottom: 0.3em;
+  border-bottom: 3px solid var(--red);
+  transition: ease-in-out;
+}
+
+/* 
+========================================================================================================================
+            *****   PAGE LAYOUT *****
+========================================================================================================================
+*/
+
+/* Hero section styles with a fixed height */
+.hero-section {
+  max-width: 100%;
+  width: 100vw;
+  height: 60svh;
+}
+
+/* Background images for different pages with a dark overlay */
+.background-image-home {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url("../images/cover.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+.background-image-study {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url("../images/studie-tips-cover.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+.background-image-relaxing {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url("../images/ontspanning-cover.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+.background-image-tools {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url("../images/Tools-cover.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+.background-image-contact {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url("../images/contact-cover.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Hero section content alignment */
+.hero-content {
+  padding-top: 15rem;
+}
+
+/* Main title styling */
+.block-title {
+  font-size: 3.75rem;
+  line-height: 4.375rem;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(2, 23, 16, 0.2);
+}
+
+/* Paragraph styling within hero section */
+.block-paragraph {
+  font-size: var(--26px);
+  line-height: 30px;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(2, 23, 16, 0.2);
+}
+
+/* Two-column layout for content sections */
+.page-layout__content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: top;
+}
+
+/* Image container styling for proper alignment */
+.page-layout__content-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensuring images fit within their container */
+.page-layout__content-image img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+/* Section heading styling */
+.page-layout__content-wrapper h1 {
+  font-size: 50px;
+  line-height: 60px;
+  color: var(--red);
+  font-weight: 700;
+  margin-bottom: var(--8px);
+}
+
+/* Section paragraph styling */
+.page-layout__content-wrapper p {
+  font-size: var(--18px);
+  line-height: var(--26px);
+}
+
+/* Spacer for visual separation between sections */
+.page-layout__divider {
+  height: 10rem;
+}
+
+/* Call-to-action button styling */
+.page-layout__call-to-action {
+  display: inline-block;
+  border: none;
+  background: linear-gradient(116.43deg, #e30046 0%, #b40a4d 100%);
+  font-size: 0.875rem;
+  line-height: 1rem;
+  margin-top: 1.5rem;
+  padding: 0.625rem 1rem;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.88px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+}
+
+/* Call-to-action hover effect */
+.page-layout__call-to-action:hover {
+  background: transparent;
+  color: var(--red);
+  border: 1px solid var(--red);
+  transform: translateY(-2px);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 
+========================================================================================================================
+            *****     FOOTER    *****
+========================================================================================================================
+*/
+
+/* Footer styling with gradient background */
+footer {
+  height: 45svh;
+  background: var(--gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grid layout for footer content */
+.footer__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.footer__large-title {
+  font-size: var(--42px);
+  font-weight: var(--fw-bold);
+  margin-bottom: 0.5em;
+}
+
+.footer__small-title {
+  font-size: var(--36px);
+}
+
+.footer__wrapper-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--8px);
+}
+
+.footer__wrapper-bottom small {
+  font-size: var(--16px);
+  line-height: var(--20px);
+  font-weight: var(--fw-regular);
+}
+
+.footer__logo {
+  max-width: 100%;
+  height: var(--35px);
+  cursor: pointer;
+  padding: 0.1em;
+}
+
+/* 
+========================================================================================================================
+            *****     RESPONSIVE DESIGN    *****
+========================================================================================================================
+*/
+
+/* Responsive adjustments for screens smaller than 992px */
+@media screen and (width < 992px) {
+  /* Navigation links styling */
+  nav ul a {
+    font-size: var(--16px);
+    line-height: var(--30px);
+    margin-left: 1rem;
+  }
+
+  .container {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .page-layout__content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .page-layout__content-image-flipped {
+    order: 2;
+  }
+
+  .page-layout__content-image img {
+    width: 100%;
+  }
+}
+
+/* Responsive adjustments for screens smaller than 600px */
+@media screen and (width < 600px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  nav ul {
+    margin-top: 0.5em;
+    flex-direction: row;
+    gap: 1.5em;
+  }
+
+  nav ul a {
+    margin-left: 0;
+    font-size: var(--14px);
+  }
+
+  .footer__large-title {
+    font-size: var(--34px);
+  }
+
+  .footer__small-title {
+    font-size: var(--22px);
+  }
+}
+
+/* Add this to your existing CSS file */
+
+/* Background image for the Study Tools page */
+.background-image-tools {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url("../images/tools-cover.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Study Tools Grid Layout */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Tool Card Styling */
+.tool-card {
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Tool Icon Styling */
+.tool-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Tool Card Title */
+.tool-card h2 {
+  color: var(--red);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Tool Card Description */
+.tool-card p {
+  margin-bottom: 1.5rem;
+  font-size: var(--16px);
+  line-height: var(--22px);
+}
+
+/* Pomodoro Timer Styling */
+.pomodoro-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer-display {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: var(--blue);
+}
+
+.timer-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.timer-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.timer-button:hover {
+  background-color: var(--red);
+}
+
+.timer-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.timer-mode {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mode-button {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.mode-button.active {
+  background-color: var(--blue);
+  color: white;
+}
+
+.mode-button:hover {
+  background-color: var(--light-blue);
+}
+
+/* Todo List Styling */
+.todo-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#todo-form {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+#todo-input {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+}
+
+#add-todo {
+  padding: 0.75rem 1rem;
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#add-todo:hover {
+  background-color: var(--red);
+}
+
+#todo-count {
+  width: 100%;
+  text-align: right;
+  color: var(--gray);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+#todo-list {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.todo-item:hover {
+  background-color: rgba(159, 218, 249, 0.3);
+}
+
+.todo-checkbox {
+  margin-right: 0.75rem;
+  cursor: pointer;
+}
+
+.todo-text {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.delete-todo {
+  background: none;
+  border: none;
+  color: var(--red);
+  cursor: pointer;
+  font-size: 1.25rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.delete-todo:hover {
+  opacity: 1;
+}
+
+.clear-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.clear-button:hover {
+  background-color: var(--red);
+}
+
+/* Responsive adjustments for the tools grid */
+@media screen and (width < 992px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+}
