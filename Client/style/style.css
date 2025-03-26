@@ -4,12 +4,13 @@
 :root {
     /* UCLL Branding Colors */
     --base-color: #ffffff;
-    --base-variant: #F2FAFE;
+    --base-variant: #ffffff;
     --text-color: #333;
     --primary-color: #E30147;
     --secondary-color: #002757;
     --nav-text-color: #002757;
     --gradient: linear-gradient(126.62deg, #e30046 0%, #721a57 100%);
+    --shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 
     /* Pixel to REM conversions for consistent sizing */
     --8px: 0.5rem;
@@ -90,9 +91,12 @@ body {
     align-items: center;
     border: none;
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     right: 20px;
     z-index: 999;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s;
 }
 
 #theme-switch svg {
