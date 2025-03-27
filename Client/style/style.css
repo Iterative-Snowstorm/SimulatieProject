@@ -3,12 +3,14 @@
 
 :root {
   /* UCLL Branding Colors */
-  --blue: #002757;
-  --red: #e30147;
-  --light-blue: #9fdaf9;
-  --light-gray: #e9f3f8;
-  --gray: #333;
+  --base-color: #ffffff;
+  --base-variant: #ffffff;
+  --text-color: #333;
+  --primary-color: #E30147;
+  --secondary-color: #002757;
+  --nav-text-color: #002757;
   --gradient: linear-gradient(126.62deg, #e30046 0%, #721a57 100%);
+  --shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 
   /* Pixel to REM conversions for consistent sizing */
   --8px: 0.5rem;
@@ -131,7 +133,7 @@ nav {
 /* Site logo styling */
 .site-branding-logo {
   font-size: 2rem;
-  color: var(--red);
+  color: var(--primary-color);
   font-weight: var(--fw-black);
   list-style-type: none;
   text-decoration: none;
@@ -152,13 +154,14 @@ nav {
   align-items: center;
   gap: 1rem;
   margin-top: 1em;
-  color: var(--blue);
+  color: var(--secondary-color);
 }
 
 /* Adjusts the font size of small text in the navigation bar */
 .navigation__top-bar small {
   font-size: var(--14px);
   line-height: var(--20px);
+  color: var(--text-color);
 }
 
 /* Navigation menu styling */
@@ -173,7 +176,7 @@ nav ul a {
   font-size: var(--18px);
   line-height: var(--30px);
   font-weight: 700;
-  color: var(--blue);
+  color: var(--nav-text-color);
   list-style-type: none;
   text-decoration: none;
   margin-left: 3.125rem;
@@ -181,9 +184,9 @@ nav ul a {
 
 /* Hover effect for navigation links */
 ul a:hover {
-  color: var(--red);
+  color: var(--primary-color);
   padding-bottom: 0.3em;
-  border-bottom: 3px solid var(--red);
+  border-bottom: 3px solid var(--primary-color);
   transition: ease-in-out;
 }
 
@@ -193,7 +196,6 @@ ul a:hover {
 ========================================================================================================================
 */
 
-/* Hero section styles with a fixed height */
 .hero-section {
   max-width: 100%;
   width: 100vw;
@@ -201,31 +203,10 @@ ul a:hover {
 }
 
 /* Background images for different pages with a dark overlay */
-.background-image-home {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
-    url("../images/cover.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
-.background-image-study {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
-    url("../images/studie-tips-cover.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
-.background-image-relaxing {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
-    url("../images/ontspanning-cover.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
-.background-image-tools {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
-    url("../images/Tools-cover.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
-.background-image-contact {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
-    url("../images/contact-cover.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
+.background-image-home { background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../images/cover.jpg") no-repeat center center fixed; background-size: cover; }
+.background-image-study { background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../images/studie-tips-cover.jpg") no-repeat center center fixed; background-size: cover; }
+.background-image-relaxing { background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../images/ontspanning-cover.jpg") no-repeat center center fixed; background-size: cover; }
+.background-image-contact { background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../images/contact-cover.jpg") no-repeat center center fixed; background-size: cover; }
 
 /* Hero section content alignment */
 .hero-content {
@@ -275,7 +256,7 @@ ul a:hover {
 .page-layout__content-wrapper h1 {
   font-size: 50px;
   line-height: 60px;
-  color: var(--red);
+  color: var(--primary-color);
   font-weight: 700;
   margin-bottom: var(--8px);
 }
@@ -296,24 +277,24 @@ ul a:hover {
   display: inline-block;
   border: none;
   background: linear-gradient(116.43deg, #e30046 0%, #b40a4d 100%);
-  font-size: 0.875rem;
+  font-size: .875rem;
   line-height: 1rem;
   margin-top: 1.5rem;
-  padding: 0.625rem 1rem;
+  padding: .625rem 1rem;
   color: white;
   font-weight: 700;
-  letter-spacing: 0.88px;
+  letter-spacing: .88px;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) .4s;
 }
 
 /* Call-to-action hover effect */
 .page-layout__call-to-action:hover {
   background: transparent;
-  color: var(--red);
-  border: 1px solid var(--red);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   transform: translateY(-2px);
   transition: transform 0.3s ease-in-out;
 }
@@ -422,21 +403,23 @@ footer {
   height: 45svh;
   background: var(--gradient);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 }
 
 /* Grid layout for footer content */
 .footer__content-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-decoration: none;
-  text-align: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      text-align: center;
 }
+
+
 
 .footer__large-title {
   font-size: var(--42px);
@@ -463,9 +446,9 @@ footer {
 
 .footer__logo {
   max-width: 100%;
-  height: var(--35px);
-  cursor: pointer;
-  padding: 0.1em;
+      height: var(--35px);
+      cursor: pointer;
+      padding: 0.1em;
 }
 
 /* 
@@ -478,54 +461,54 @@ footer {
 @media screen and (width < 992px) {
   /* Navigation links styling */
   nav ul a {
-    font-size: var(--16px);
-    line-height: var(--30px);
-    margin-left: 1rem;
+      font-size: var(--16px);
+      line-height: var(--30px);
+      margin-left: 1rem;
   }
-
+  
   .container {
-    padding-left: 3%;
-    padding-right: 3%;
+      padding-left: 3%;
+      padding-right: 3%;
   }
 
   .page-layout__content-wrapper {
-    grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
   }
 
   .page-layout__content-image-flipped {
-    order: 2;
+      order: 2;
   }
 
   .page-layout__content-image img {
-    width: 100%;
+      width: 100%;
   }
 }
 
 /* Responsive adjustments for screens smaller than 600px */
 @media screen and (width < 600px) {
   nav {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+     display: flex;
+     flex-direction: column;
+     align-items: start;
   }
 
   nav ul {
-    margin-top: 0.5em;
-    flex-direction: row;
-    gap: 1.5em;
+      margin-top: 0.5em;
+      flex-direction: row;
+      gap: 1.5em;
   }
 
   nav ul a {
-    margin-left: 0;
-    font-size: var(--14px);
+      margin-left: 0;
+      font-size: var(--14px);
   }
-
+  
   .footer__large-title {
-    font-size: var(--34px);
+      font-size: var(--34px);
   }
-
+  
   .footer__small-title {
-    font-size: var(--22px);
+      font-size: var(--22px);
   }
 }
 
