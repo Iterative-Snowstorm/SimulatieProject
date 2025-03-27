@@ -41,8 +41,12 @@
 }
 
 .darkmode {
-  --dark-bg: #0d0f1a;
-  --dark-text: #d1d5e0;
+  --base-color: #0D0F1A;
+  --base-variant: #101425;
+  --text-color: #ffffff;
+  --primary-color: #E30147;
+  --secondary-color: #002757;
+  --nav-text-color: #ffffff;
 }
 
 /* Resetting default margin, padding, and setting box-sizing to border-box */
@@ -57,7 +61,8 @@ body {
   font-family: "Readex Pro", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  color: var(--gray);
+  background-color: var(--base-color);
+  color: var(--text-color);
 }
 
 /* Main container with a max-width for layout consistency */
@@ -65,6 +70,47 @@ body {
   position: relative;
   max-width: var(--1280px);
   margin: 0 auto;
+}
+
+/* 
+========================================================================================================================
+            *****   Darkmode Button *****
+========================================================================================================================
+*/
+
+#theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--base-variant);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background-color 0.3s;
+}
+
+#theme-switch svg {
+  fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
 }
 
 /* 
