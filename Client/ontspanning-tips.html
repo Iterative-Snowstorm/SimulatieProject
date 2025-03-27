@@ -68,9 +68,12 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/1ZYbU82GVz4" title="Relaxing Music"></iframe>
     </section>
 
+    
+
+
     <section class="moppen-generator">
         <h2>Willekeurige Mop</h2>
-        <h5>Klik op de knop voor een mop!</h5>
+        <h5 class="mopknop">Klik op de knop voor een mop!</h5>
         <p id="mop"></p>
         <button onclick="genereerMop()">Nieuwe Mop</button>
     </section>
@@ -78,8 +81,37 @@
     <section class="ademhalingsoefening">
         <h2>Ademhalingsoefening</h2>
         <p>Klik op de bol en volg de animatie om rustig te ademen.</p>
-        <div class="ademhaling"></div>
+        <div class="ademhaling">
+          <span class="hover-tekst">Druk op de bol voor de oefening te starten</span>
+        </div>
+        
     </section>
+
+   
+    
+
+    <section class="home-workout">
+      <h2>Home-Workout</h2>
+      <p>Volg hier een korte workout om even te onstpannen.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/fLLScgWQcHc?si=2rxnikX_PBdMNfVR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <section class="Wandeling">
+      <h2>Wandeling</h2>
+      <p>Zet de timer aan en maak een korte wandeling van 10 minuten</p>
+      <div id="timer">10:00</div>
+      <button onclick=" timerVoorWandeling()">Start de timer</button>
+    </section>
+
+    <section class="rustgevende-muziek">
+      <h3>Luister naar rustgevende muziek</h3>
+      <audio controls loop>
+        <source src="zen-garden-310599.mp3" type="audio/mpeg">
+        Je browser ondersteunt het afspelen van audio niet.
+      </audio>
+    </section>
+    
+
 </main>
 
 
