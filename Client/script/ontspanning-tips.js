@@ -19,6 +19,27 @@ function startAdemhalingsoefening() {
     }, 4000);
 }
 
+function timerVoorWandeling() {
+    var sec = 600; // 10 minuten = 600 seconden
+    var timer = setInterval(function () {
+        var minutes = Math.floor(sec / 60); // Minuten berekenen
+        var seconds = sec % 60; // Overgebleven seconden berekenen
+        
+        // Correcte weergave met voorloopnul indien seconden < 10
+        document.getElementById('timer').innerHTML = 
+            `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        
+        sec--;
+        
+        if (sec < 0) {
+            clearInterval(timer);
+            document.getElementById('timer').innerHTML = "Tijd om terug te keren!"; // Eindmelding
+        }
+    }, 1000);
+}
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".ademhaling").addEventListener("click", startAdemhalingsoefening);
 });

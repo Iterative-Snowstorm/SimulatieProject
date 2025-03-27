@@ -1,33 +1,23 @@
 /* Stijl voor ontspanningstips pagina */
-.video-music, .moppen-generator, .darkmode-toggle, .ademhalingsoefening {
+.video-music, .moppen-generator, .darkmode-toggle, .ademhalingsoefening, .home-workout, .Wandeling, .rustgevende-muziek {
     text-align: center;
     margin: 40px auto;
 }
 
 /* Stijl voor de ademhalingsoefening animatie */
 .ademhaling {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin: 20px auto;
     border-radius: 50%;
     background-color: var(--red);
-    transition: transform 4s ease-in-out;
+    transition: transform 6s ease-in-out;
 }
 
 .adem-animatie {
     transform: scale(1.5);
 }
 
-/* Dark mode styling */
-.darkmode {
-    background-color: black;
-    color: white;
-}
-
-.darkmode button {
-    background-color: white;
-    color: black;
-}
 
 button {
     padding: 10px 20px;
@@ -41,3 +31,88 @@ button {
 button:hover {
     background-color: var(--blue);
 }
+
+h2 {
+    font-size: 2rem;
+    color: var(--red);
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+section {
+    padding: 4rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  section:not(:last-of-type) {
+    margin-bottom: 3rem;
+  }
+
+  h5.mopknop{
+    margin-bottom: 10px;
+  }
+
+  iframe {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .ademhaling {
+    background: radial-gradient(circle, var(--red) 0%, var(black) 50%);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+
+  button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    background: var(--gradient);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+  }
+
+  
+  
+  
+  
+  .ademhaling {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .hover-tekst {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    font-size: 0.5rem;
+  }
+  
+  .ademhaling:hover .hover-tekst {
+    opacity: 1;
+  }
+  
+
+  
