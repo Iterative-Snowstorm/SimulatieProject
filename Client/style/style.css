@@ -308,24 +308,36 @@ ul a:hover {
     background-color: #fffae3;
 }
 
-.postit[data-category="Time Management"] {
-    background-color: #fde79a;
+/* Group 1: Time Management, Goal Setting, Motivation */
+.postit[data-category="Time Management"],
+.postit[data-category="Goal Setting"],
+.postit[data-category="Motivation"] {
+    background-color: #fde79a; /* Light Yellow */
 }
 
-.postit[data-category="Environmental Tips"] {
-    background-color: #b8e2a5;
+/* Group 2: Study Techniques, Study Group, Study Environment */
+.postit[data-category="Study Techniques"],
+.postit[data-category="Study Group"],
+.postit[data-category="Study Environment"],
+.postit[data-category="Memory Techniques"]
+{
+    background-color: #a6d8f0; /* Light Blue */
 }
 
+/* Group 3: Health & Wellness */
+.postit[data-category="Health & Wellness"] {
+    background-color: #fbc3a7; /* Light Orange */
+}
+
+/* Group 4: Mindset, Aanpak Methode */
+.postit[data-category="Mindset"],
 .postit[data-category="Aanpak methode"] {
-    background-color: #f8a6a8;
+    background-color: #f8a6a8; /* Light Red */
 }
 
-.postit[data-category="Studie wijze"] {
-    background-color: #a6d8f0;
-}
-
-.postit[data-category="Make it Fun"] {
-    background-color: #fbc3a7;
+/* Group 5: Environmental Tips */
+.postit[data-category="Environmental Tips"] {
+    background-color: #b8e2a5; /* Light Green */
 }
 
 .postit p {
