@@ -11,6 +11,11 @@
   --nav-text-color: #002757;
   --gradient: linear-gradient(126.62deg, #e30046 0%, #721a57 100%);
   --shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  --blue: #002757;
+  --red: #e30147;
+  --light-blue: #9fdaf9;
+  --light-gray: #e9f3f8;
+  --gray: #333;
 
   /* Pixel to REM conversions for consistent sizing */
   --8px: 0.5rem;
@@ -974,4 +979,3 @@ footer {
       grid-template-columns: 1fr;
     }
   }
-
