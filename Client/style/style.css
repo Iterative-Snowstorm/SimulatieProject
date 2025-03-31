@@ -349,16 +349,46 @@ ul a:hover {
     text-overflow: ellipsis;
 }
 
+.postit p {
+  display: none;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease-in-out;
+}
+
 
 .postit:hover {
     transform: scale(1.05);
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.postit:hover p {
+  display: block;
+  opacity: 1;
+}
+
 .postit.open {
-    transform: scale(1.15);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: auto;
+  padding: 20px;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 1000;
+  background-color: #fffae3;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.overlay {
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     z-index: 999;
-    background-color: #fffae3;
+    display: none;
 }
 
 .postit[data-category="Time Management"],
@@ -395,6 +425,60 @@ ul a:hover {
 
 .postit.open p {
     display: block;
+}
+
+.darkmode .postit {
+  background-color: #222; /* Darker background */
+  color: #fff; /* Lighter text for contrast */
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.darkmode .postit.open {
+  background-color: #333;
+  color: #fff;
+}
+
+.darkmode .postit[data-category="Time Management"],
+.darkmode .postit[data-category="Goal Setting"],
+.darkmode .postit[data-category="Motivation"] {
+  background-color: #5a4b2e;
+}
+
+.darkmode .postit[data-category="Study Techniques"],
+.darkmode .postit[data-category="Study Group"],
+.darkmode .postit[data-category="Study Environment"],
+.darkmode .postit[data-category="Memory Techniques"] {
+  background-color: #2b4b5f;
+}
+
+.darkmode .postit[data-category="Health & Wellness"] {
+  background-color: #744d3a;
+}
+
+.darkmode .postit[data-category="Mindset"],
+.darkmode .postit[data-category="Aanpak methode"] {
+  background-color: #633a3b;
+}
+
+.darkmode .postit[data-category="Environmental Tips"] {
+  background-color: #3f6130;
+}
+
+.hero-section.background-image-study .hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 0;
+  text-align: center;
+}
+
+.hero-section.background-image-study {
+  height: 30svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 
