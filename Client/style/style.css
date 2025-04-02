@@ -226,7 +226,7 @@ ul a:hover {
 blockquote {
     background: var(--quotebg);
     border-left: 10px solid var(--primary-color);
-    font-size: var(--24px);
+    font-size: var(--26px);
     margin: 1.5em auto;
     padding: 3.5em 1em;
     quotes: "\201C""\201D""\2018""\2019";
@@ -239,7 +239,7 @@ blockquote {
 blockquote::before{
     content: "\201C";
     color: var(--primary-color);
-    font-size:4em;
+    font-size: 4em;
     position: absolute;
     top: 0px;
     left: 0.1em;
