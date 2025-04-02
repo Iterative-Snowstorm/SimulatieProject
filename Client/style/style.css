@@ -224,7 +224,7 @@ ul a:hover {
 */
 
 blockquote {
-    background: var(--quotebg);
+    background-color: var(--base-variant);
     border-left: 10px solid var(--primary-color);
     font-size: var(--26px);
     margin: 1.5em auto;
