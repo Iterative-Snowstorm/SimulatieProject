@@ -1063,3 +1063,74 @@ footer {
       grid-template-columns: 1fr;
     }
   }
+
+
+  .form-container {
+    background: var(--base-variant);
+    padding: var(--30px);
+    border-radius: var(--8px);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: auto;
+    margin-top: 3rem;
+  }
+
+  #form-header h1 {
+    font-size: var(--26px);
+    color: var(--primary-color);
+    font-weight: var(--fw-bold);
+  }
+
+  label {
+    font-weight: var(--fw-medium);
+    display: block;
+    margin-top: var(--14px);
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: var(--14px);
+    margin-top: var(--8px);
+    border: 1px solid var(--gray);
+    border-radius: var(--8px);
+    background-color: var(--base-color);
+    color: var(--text-color);
+  }
+
+  textarea {
+    height: 100px;
+    resize: vertical;
+  }
+
+  .btn-primary {
+    background: var(--gradient);
+    color: white;
+    padding: var(--14px);
+    border: none;
+    border-radius: var(--8px);
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+    margin-top: var(--20px);
+    width: 100%;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+
+  .hero-section.background-image-contact .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 0;
+    text-align: center;
+  }
+  
+  .hero-section.background-image-contact {
+    height: 30svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
