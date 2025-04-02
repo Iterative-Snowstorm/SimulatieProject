@@ -1,12 +1,10 @@
-// Pomodoro Timer Functionality
 document.addEventListener("DOMContentLoaded", function () {
-  // Pomodoro Timer Variables
+  // ================= Pomodoro Timer ================= //
   let timer;
   let minutes = 25;
   let seconds = 0;
   let isRunning = false;
 
-  // DOM Elements - Pomodoro
   const minutesDisplay = document.getElementById("minutes");
   const secondsDisplay = document.getElementById("seconds");
   const startBtn = document.getElementById("start-timer");
@@ -16,28 +14,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const shortBreakBtn = document.getElementById("short-break");
   const longBreakBtn = document.getElementById("long-break");
 
-  // Timer Settings
   const POMODORO_TIME = 25;
   const SHORT_BREAK_TIME = 5;
   const LONG_BREAK_TIME = 15;
 
-  // Pomodoro Timer Functions
   function startTimer() {
     if (!isRunning) {
       isRunning = true;
       startBtn.disabled = true;
       pauseBtn.disabled = false;
 
-      timer = setInterval(function () {
+      timer = setInterval(() => {
         if (seconds === 0) {
           if (minutes === 0) {
-            // Timer complete
             clearInterval(timer);
             isRunning = false;
             startBtn.disabled = false;
             pauseBtn.disabled = true;
-
-            // Play notification sound or alert
             alert("Tijd is om!");
             return;
           }
@@ -46,26 +39,22 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           seconds--;
         }
-
         updateTimerDisplay();
       }, 1000);
     }
   }
 
   function pauseTimer() {
-    if (isRunning) {
-      clearInterval(timer);
-      isRunning = false;
-      startBtn.disabled = false;
-      pauseBtn.disabled = true;
-    }
+    clearInterval(timer);
+    isRunning = false;
+    startBtn.disabled = false;
+    pauseBtn.disabled = true;
   }
 
   function resetTimer() {
     clearInterval(timer);
     isRunning = false;
 
-    // Determine which mode is active
     if (pomodoroBtn.classList.contains("active")) {
       minutes = POMODORO_TIME;
     } else if (shortBreakBtn.classList.contains("active")) {
@@ -89,12 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
     clearInterval(timer);
     isRunning = false;
 
-    // Remove active class from all mode buttons
     pomodoroBtn.classList.remove("active");
     shortBreakBtn.classList.remove("active");
     longBreakBtn.classList.remove("active");
 
-    // Set active class and timer based on mode
     if (mode === "pomodoro") {
       pomodoroBtn.classList.add("active");
       minutes = POMODORO_TIME;
@@ -112,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
     pauseBtn.disabled = true;
   }
 
-  // Event Listeners - Pomodoro
   startBtn.addEventListener("click", startTimer);
   pauseBtn.addEventListener("click", pauseTimer);
   resetBtn.addEventListener("click", resetTimer);
@@ -120,133 +106,125 @@ document.addEventListener("DOMContentLoaded", function () {
   shortBreakBtn.addEventListener("click", () => setTimerMode("short"));
   longBreakBtn.addEventListener("click", () => setTimerMode("long"));
 
-  // Initialize Timer Display
   updateTimerDisplay();
 
-  // Todo List Functionality
+  // ================= ToDo List ================= //
   const todoForm = document.getElementById("todo-form");
   const todoInput = document.getElementById("todo-input");
   const todoList = document.getElementById("todo-list");
   const todoCount = document.getElementById("todo-count");
   const clearCompletedBtn = document.getElementById("clear-completed");
+  const resetAllBtn = document.getElementById("reset-all");
+  const categorySelect = document.getElementById("todo-category");
 
-  // Array to store todos
-  let todos = [];
+  let todosByCategory =
+    JSON.parse(localStorage.getItem("todosByCategory")) || {};
 
-  // Load todos from localStorage if available
-  if (localStorage.getItem("todos")) {
-    todos = JSON.parse(localStorage.getItem("todos"));
-    renderTodoList();
+  function saveTodos() {
+    localStorage.setItem("todosByCategory", JSON.stringify(todosByCategory));
   }
 
-  // Add a new todo
   function addTodo(event) {
     event.preventDefault();
+    const text = todoInput.value.trim();
+    const category = categorySelect.value;
 
-    // Get todo text and trim whitespace
-    const todoText = todoInput.value.trim();
+    if (!text) return;
 
-    // Don't add empty todos
-    if (todoText === "") return;
-
-    // Check if we already have 10 todos
-    if (todos.length >= 10) {
-      alert(
-        "Je kunt maximaal 10 taken toevoegen. Verwijder eerst een bestaande taak."
-      );
-      return;
-    }
-
-    // Create new todo object
     const todo = {
       id: Date.now(),
-      text: todoText,
+      text,
       completed: false,
     };
 
-    // Add to todos array
-    todos.push(todo);
+    if (!todosByCategory[category]) {
+      todosByCategory[category] = [];
+    }
 
-    // Save to localStorage
-    saveToLocalStorage();
-
-    // Clear input
+    todosByCategory[category].push(todo);
+    saveTodos();
     todoInput.value = "";
-
-    // Render updated todo list
     renderTodoList();
   }
 
-  // Toggle todo completion status
-  function toggleTodo(id) {
-    todos = todos.map((todo) => {
-      if (todo.id === id) {
-        todo.completed = !todo.completed;
-      }
+  function toggleTodo(category, id) {
+    todosByCategory[category] = todosByCategory[category].map((todo) => {
+      if (todo.id === id) todo.completed = !todo.completed;
       return todo;
     });
-
-    saveToLocalStorage();
+    saveTodos();
     renderTodoList();
   }
 
-  // Delete a todo
-  function deleteTodo(id) {
-    todos = todos.filter((todo) => todo.id !== id);
-
-    saveToLocalStorage();
+  function deleteTodo(category, id) {
+    todosByCategory[category] = todosByCategory[category].filter(
+      (todo) => todo.id !== id
+    );
+    saveTodos();
     renderTodoList();
   }
 
-  // Clear all completed todos
   function clearCompleted() {
-    todos = todos.filter((todo) => !todo.completed);
-
-    saveToLocalStorage();
+    for (let category in todosByCategory) {
+      todosByCategory[category] = todosByCategory[category].filter(
+        (todo) => !todo.completed
+      );
+    }
+    saveTodos();
     renderTodoList();
   }
 
-  // Save todos to localStorage
-  function saveToLocalStorage() {
-    localStorage.setItem("todos", JSON.stringify(todos));
+  function resetAll() {
+    if (confirm("Weet je zeker dat je alle taken wilt verwijderen?")) {
+      todosByCategory = {};
+      saveTodos();
+      renderTodoList();
+    }
   }
 
-  // Render the todo list
   function renderTodoList() {
-    // Clear the current list
     todoList.innerHTML = "";
+    let totalCount = 0;
 
-    // Update todo count
-    todoCount.textContent = `${todos.length}/10 taken`;
+    for (const category in todosByCategory) {
+      if (!todosByCategory[category].length) continue;
 
-    // Add each todo to the list
-    todos.forEach((todo) => {
-      const todoItem = document.createElement("li");
-      todoItem.classList.add("todo-item");
-      if (todo.completed) {
-        todoItem.classList.add("completed");
-      }
+      const header = document.createElement("h3");
+      header.innerHTML = `<span class="category-label category-${category}">
+        ${category.charAt(0).toUpperCase() + category.slice(1)}
+      </span>`;
+      todoList.appendChild(header);
 
-      todoItem.innerHTML = `
-                <input type="checkbox" class="todo-checkbox" ${
-                  todo.completed ? "checked" : ""
-                }>
-                <span class="todo-text">${todo.text}</span>
-                <button class="delete-todo">×</button>
-            `;
+      todosByCategory[category].forEach((todo) => {
+        totalCount++;
+        const li = document.createElement("li");
+        li.classList.add("todo-item");
+        if (todo.completed) li.classList.add("completed");
 
-      // Add event listeners
-      const checkbox = todoItem.querySelector(".todo-checkbox");
-      checkbox.addEventListener("change", () => toggleTodo(todo.id));
+        li.innerHTML = `
+  <input type="checkbox" class="todo-checkbox" ${todo.completed ? "checked" : ""}>
+  <span class="todo-text">${todo.text}</span>
+  <button class="delete-todo">×</button>
+`;
 
-      const deleteBtn = todoItem.querySelector(".delete-todo");
-      deleteBtn.addEventListener("click", () => deleteTodo(todo.id));
+        li.querySelector(".todo-checkbox").addEventListener("change", () =>
+          toggleTodo(category, todo.id)
+        );
+        li.querySelector(".delete-todo").addEventListener("click", () =>
+          deleteTodo(category, todo.id)
+        );
 
-      todoList.appendChild(todoItem);
-    });
+        todoList.appendChild(li);
+      });
+    }
+
+    todoCount.textContent = `${totalCount} taken`;
   }
 
-  // Event Listeners - Todo List
+  // Event Listeners
   todoForm.addEventListener("submit", addTodo);
   clearCompletedBtn.addEventListener("click", clearCompleted);
+  resetAllBtn.addEventListener("click", resetAll);
+
+  renderTodoList();
 });

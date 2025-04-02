@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Studiegids - Studie Tools</title>
     <link rel="stylesheet" href="./style/style.css" />
-    <script src="script/tools.js" defer></script>
+    <link rel="stylesheet" href="./style/tools.css" />
+    <script src="./script/tools.js" defer></script>
   </head>
   <body>
     <header>
-      <!-- Top navigation bar with support branding -->
       <div class="container">
         <div class="navigation__top-bar">
           <button id="theme-switch">
@@ -25,14 +25,10 @@
             alt="Header Logo UCLL"
           />
         </div>
-
-        <!-- Main Navigation Bar -->
         <nav aria-label="Main Navigation">
-          <!-- Site Branding (Logo or Name) -->
           <div>
             <a class="site-branding-logo" href="index.html">StudentBuddy</a>
           </div>
-          <!-- Navigation Menu with links to different sections of the site -->
           <div>
             <ul>
               <li>
@@ -55,8 +51,8 @@
         </nav>
       </div>
     </header>
+
     <main>
-      <!-- Hero section with welcome message -->
       <section class="hero-section background-image-tools">
         <div class="container">
           <div class="hero-content">
@@ -70,7 +66,6 @@
 
       <div class="page-layout__divider"></div>
 
-      <!-- Study Tools Section -->
       <section>
         <div class="container">
           <div class="tools-grid">
@@ -113,11 +108,19 @@
               <div class="tool-icon">📝</div>
               <h2>ToDo List</h2>
               <p>
-                Houd taken bij en verhoog je productiviteit met deze eenvoudige
-                ToDo List tool. Je kunt maximaal 10 taken toevoegen.
+                Houd taken bij en verhoog je productiviteit. Categoriseer je
+                taken en behoud overzicht!
               </p>
               <div class="todo-container">
                 <form id="todo-form">
+                  <div class="todo-category-select">
+                    <select id="todo-category">
+                      <option value="school">School</option>
+                      <option value="werk">Werk</option>
+                      <option value="persoonlijk">Persoonlijk</option>
+                      <option value="anders">Anders</option>
+                    </select>
+                  </div>
                   <input
                     type="text"
                     id="todo-input"
@@ -126,10 +129,16 @@
                   />
                   <button type="submit" id="add-todo">Toevoegen</button>
                 </form>
-                <div id="todo-count">0/10 taken</div>
+
+                <div id="todo-count">0 taken</div>
                 <ul id="todo-list"></ul>
+
                 <button id="clear-completed" class="clear-button">
                   Verwijder Voltooide
+                </button>
+
+                <button id="reset-all" class="reset-button">
+                  Reset Alle Taken
                 </button>
               </div>
             </div>
@@ -139,9 +148,9 @@
 
       <div class="page-layout__divider"></div>
     </main>
+
     <footer>
       <div class="container">
-        <!-- Study Guidance Call-to-Action -->
         <div class="footer__content-wrapper">
           <div>
             <h2 class="footer__large-title">
@@ -154,19 +163,17 @@
         </div>
       </div>
     </footer>
-    <!-- Bottom Footer Section -->
+
     <div>
       <div class="container">
-        <!-- Bottom Footer -->
         <div class="footer__wrapper-bottom">
-          <small> © 2025 - Hogeschool UCLL </small>
+          <small>© 2025 - Hogeschool UCLL</small>
           <img
             class="footer__logo"
             src="./images/Logo_UCLL_RGB.png"
             alt="Footer Logo UCLL"
           />
         </div>
-        <!-- Bottom Footer -->
       </div>
     </div>
 
