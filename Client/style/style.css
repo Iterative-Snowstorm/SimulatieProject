@@ -9,7 +9,8 @@
     --primary-color: #E30147;
     --secondary-color: #002757;
     --nav-text-color: #002757;
-    --quotebg: #f9f9f9;
+    --quotebg: #F2FAFE;
+    --quotetext: #002757;
     --gradient: linear-gradient(126.62deg, #e30046 0%, #721a57 100%);
     --shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 
@@ -51,7 +52,8 @@
     --primary-color: #E30147;
     --secondary-color: #002757;
     --nav-text-color: #ffffff;
-    --quotebg: #1d213a;
+    --quotebg: #101425;
+    --quotetext: #ffffff;
 }
 
 /* Resetting default margin, padding, and setting box-sizing to border-box */
@@ -203,7 +205,7 @@ ul a:hover {
 .hero-section {
     max-width: 100%;
     width: 100vw;
-    height: 45svh;
+    height: 50svh;
 }
 
 /* Background images for different pages with a dark overlay */
@@ -224,14 +226,15 @@ ul a:hover {
 */
 
 blockquote {
-    background-color: var(--base-variant);
+    background-color: var(--quotebg);
     border-left: 10px solid var(--primary-color);
     font-size: var(--26px);
+    color: var(--quotetext);
     margin: 1.5em auto;
     padding: 3.5em 1em;
     quotes: "\201C""\201D""\2018""\2019";
     border-radius: 8px;
-    font-weight: var(--fw-medium);
+    font-weight: var(--fw-bold);
     font-style: italic;
     position: relative;
 }
@@ -244,7 +247,7 @@ blockquote::before{
     top: 0px;
     left: 0.1em;
 }
-  
+
 blockquote::after{
     content: '';
 }
