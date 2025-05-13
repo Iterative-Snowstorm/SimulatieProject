@@ -608,7 +608,7 @@ blockquote::after{
 .form-wrapper {
   max-width: 35rem;
   margin: 10rem auto;
-  background-color: white;
+  background-color: var(--base-variant);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
