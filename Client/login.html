@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./style/style.css" />
     <script type="text/javascript" src="./script/darkmode.js" defer></script>
     <script type="text/javascript" src="./script/quote.js" defer></script>
+    <script type="text/javascript" src="./script/language.js" defer></script>
   </head>
   <body>
     <!-- Feature: Darkmode Switch -->
@@ -117,7 +118,7 @@
         <nav aria-label="Main Navigation">
           <!-- Site Branding (Logo or Name) -->
           <div>
-            <a class="site-branding-logo" href="index.html">StudentBuddy</a>
+            <a class="site-branding-logo" href="index.html">📚 StudentBuddy</a>
           </div>
           <!-- Navigation Menu with links to different sections of the site -->
           <div>
@@ -142,8 +143,36 @@
         </nav>
       </div>
     </header>
-    <main>
-      <div class="container"></div>
+    <main class="form-wrapper">
+      <div class="container">
+        <h1 class="form-title">Inloggen bij StudentBuddy</h1>
+        <form action="#" method="post">
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <!-- Password -->
+          <div>
+            <label for="form-group">Wachtwoord</label>
+            <input type="password" name="pasword" id="password" required />
+          </div>
+          <!-- Login Button -->
+          <button type="submit" class="form-btn">Inloggen</button>
+          <div class="or-divider">
+            <span>OF</span>
+          </div>
+
+          <a href="#" class="form-btn-secondary" id="guest-login"
+            >Doorgaan als gast</a
+          >
+
+          <p class="guest-mode-info">
+            In gastmodus kun je StudentBuddy gebruiken, <br />
+            maar je voortgang wordt niet opgeslagen.
+          </p>
+        </form>
+      </div>
     </main>
   </body>
 </html>
