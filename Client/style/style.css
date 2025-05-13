@@ -219,6 +219,24 @@ ul a:hover {
   padding-top: 15rem;
 }
 
+.hero-section.background-image-relaxing .hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 0;
+  text-align: center;
+}
+
+.hero-section.background-image-relaxing {
+  height: 30svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 /* 
 ========================================================================================================================
             *****   QUOTE LAYOUT *****
