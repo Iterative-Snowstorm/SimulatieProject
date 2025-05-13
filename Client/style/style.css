@@ -127,10 +127,13 @@ body {
 ========================================================================================================================
 */
 
+header {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
 /* Navigation bar styling */
 nav {
-  margin-top: 1rem;
-  margin-bottom: 2.375rem;
+  padding: var(--32px) 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -154,20 +157,30 @@ nav {
 
 /* Top bar navigation layout */
 .navigation__top-bar {
+  background: var(--gradient);
+}
+
+.top-bar__container {
+  padding: var(--8px) 0;
+  max-width: var(--1280px);
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  justify-content: end;
+  justify-content: flex-end;
+  gap: 2rem;
   align-items: center;
-  gap: 1rem;
-  margin-top: 1em;
-  color: var(--secondary-color);
+}
+
+.navigation__credits-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 /* Adjusts the font size of small text in the navigation bar */
 .navigation__top-bar small {
   font-size: var(--14px);
   line-height: var(--20px);
-  color: var(--text-color);
+  color: white;
 }
 
 /* Navigation menu styling */
@@ -195,6 +208,72 @@ ul a:hover {
   border-bottom: 3px solid var(--primary-color);
   transition: ease-in-out;
 }
+
+
+/*Login Layout */
+.auth-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.user-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+
+.login-text a {
+  font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
+}
+
+ /* Taal selector styling */
+ .language-section {
+   display: flex;
+   align-items: center;
+   gap: 1.5em;
+   /* ruimte tussen de vlaggen */
+   position: relative;
+ }
+
+ /* Subtiele verticale lijn tussen vlaggen */
+ .language-section::after {
+   content: "";
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   height: 16px;
+   width: 1px;
+   background-color: #e0e0e0;
+ }
+
+ .flag {
+   width: 24px;
+   height: 18px;
+   display: block;
+   border-radius: 2px;
+   cursor: pointer;
+   transition: transform 0.2s ease;
+   opacity: 0.5;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+ }
+
+ .flag:hover {
+   transform: scale(1.1);
+ }
+
+ .flag.active {
+  opacity: 1;
+   /* box-shadow: 0 0 0 2px #4285f4; */
+ }
 
 /* 
 ========================================================================================================================
