@@ -1,3 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap");
+
+:root {
+  /* UCLL Branding Colors */
+  --base-color: #ffffff;
+  --base-variant: #ffffff;
+  --text-color: #333;
+  --primary-color: #E30147;
+  --secondary-color: #002757;
+  --nav-text-color: #002757;
+  --gradient: linear-gradient(126.62deg, #e30046 0%, #721a57 100%);
+  --shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  --blue: #002757;
+  --red: #e30147;
+  --light-blue: #9fdaf9;
+  --light-gray: #e9f3f8;
+  --gray: #333;
+
+  /* Pixel to REM conversions for consistent sizing */
+  --8px: 0.5rem;
+  --14px: 0.875rem;
+  --16px: 1rem;
+  --18px: 1.125rem;
+  --20px: 1.25rem;
+  --22px: 1.375rem;
+  --26px: 1.625rem;
+  --30px: 1.875rem;
+  --32px: 2rem;
+  --34px: 2.125rem;
+  --35px: 2.188rem;
+  --36px: 2.25rem;
+  --42px: 2.625rem;
+  --50px: 3.125rem;
+  --60px: 3.75rem;
+  --90px: 5.625rem;
+  --1280px: 80rem;
+
+  /* Font Weights */
+  --fw-extra-light: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+  --fw-black: 900;
+}
+
+.darkmode {
+    --base-color: #0D0F1A;
+    --base-variant: #101425;
+    --text-color: #ffffff;
+    --primary-color: #E30147;
+    --secondary-color: #002757;
+    --nav-text-color: #ffffff;
+    --quotebg: #1d213a;
+}
 
 
 /* Stijl voor ontspanningstips pagina */
@@ -141,4 +198,6 @@ h2 {
 .darkmode section {
   background-color: #333;
 }
+
+
   
