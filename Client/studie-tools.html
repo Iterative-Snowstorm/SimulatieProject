@@ -60,7 +60,7 @@
               </svg>
             </div>
             <span class="login-text">
-              <a href="login.html">Inloggen</a>
+              <a data-key="nav_login" href="login.html">Inloggen</a>
             </span>
           </div>
           <!-- Language Section -->
@@ -118,16 +118,26 @@
         <nav aria-label="Main Navigation">
           <!-- Site Branding (Logo or Name) -->
           <div>
-            <a class="site-branding-logo" href="index.html">StudentBuddy</a>
+            <a class="site-branding-logo" href="index.html">📚 StudentBuddy</a>
           </div>
           <!-- Navigation Menu with links to different sections of the site -->
           <div>
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="studie-tips.html">Studie Tips</a></li>
-              <li><a href="ontspanning-tips.html">Ontspanning Tips</a></li>
-              <li><a href="studie-tools.html">Studie Tools</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li>
+                <a data-key="nav_home" href="index.html">Home</a>
+              </li>
+              <li>
+                <a data-key="nav_studytips" href="studie-tips.html">Studie Tips</a>
+              </li>
+              <li>
+                <a data-key="nav_relaxationtips" href="ontspanning-tips.html">Ontspanning Tips</a>
+              </li>
+              <li>
+                <a data-key="nav_studytools" href="studie-tools.html">Studie Tools</a>
+              </li>
+              <li>
+                <a data-key="nav_contact" href="contact.html">Contact</a>
+              </li>
             </ul>
           </div>
         </nav>
@@ -236,31 +246,34 @@
       <div class="page-layout__divider"></div>
     </main>
 
-    <footer>
+        <footer>
       <div class="container">
+        <!-- Study Guidance Call-to-Action -->
         <div class="footer__content-wrapper">
           <div>
-            <h2 class="footer__large-title">
+            <h2 data-key="footer_title_lg" class="footer__large-title">
               Heb je nood aan studiebegeleiding?
             </h2>
           </div>
           <div>
-            <h2 class="footer__small-title">Wij staan voor je klaar!</h2>
+            <h2 data-key="footer_title_sm" class="footer__small-title">Wij staan voor je klaar!</h2>
           </div>
         </div>
       </div>
     </footer>
-
+    <!-- Bottom Footer Section -->
     <div>
       <div class="container">
+        <!-- Bottom Footer -->
         <div class="footer__wrapper-bottom">
-          <small>© 2025 - Hogeschool UCLL</small>
+          <small data-key="footer_bottom"> © 2025 - Hogeschool UCLL </small>
           <img
             class="footer__logo"
             src="./images/Logo_UCLL_RGB.png"
             alt="Footer Logo UCLL"
           />
         </div>
+        <!-- Bottom Footer -->
       </div>
     </div>
     <script src="./script/darkmode.js" defer></script>

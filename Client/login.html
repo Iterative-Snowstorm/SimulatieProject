@@ -37,7 +37,7 @@
         />
       </svg>
     </button>
-    <header>
+ <header>
       <!-- Top navigation bar with support branding -->
       <div class="navigation__top-bar">
         <div class="top-bar__container">
@@ -60,7 +60,7 @@
               </svg>
             </div>
             <span class="login-text">
-              <a href="login.html">Inloggen</a>
+              <a data-key="nav_login" href="login.html">Inloggen</a>
             </span>
           </div>
           <!-- Language Section -->
@@ -124,50 +124,52 @@
           <div>
             <ul>
               <li>
-                <a href="index.html">Home</a>
+                <a data-key="nav_home" href="index.html">Home</a>
               </li>
               <li>
-                <a href="studie-tips.html">Studie Tips</a>
+                <a data-key="nav_studytips" href="studie-tips.html">Studie Tips</a>
               </li>
               <li>
-                <a href="ontspanning-tips.html">Ontspanning Tips</a>
+                <a data-key="nav_relaxationtips" href="ontspanning-tips.html">Ontspanning Tips</a>
               </li>
               <li>
-                <a href="studie-tools.html">Studie Tools</a>
+                <a data-key="nav_studytools" href="studie-tools.html">Studie Tools</a>
               </li>
               <li>
-                <a href="contact.html">Contact</a>
+                <a data-key="nav_contact" href="contact.html">Contact</a>
               </li>
             </ul>
           </div>
         </nav>
       </div>
     </header>
+
+    
     <main class="form-wrapper">
       <div class="container">
-        <h1 class="form-title">Inloggen bij StudentBuddy</h1>
+        <h1 data-key="login_title" class="form-title">Inloggen bij StudentBuddy</h1>
         <form action="#" method="post">
           <!-- Email -->
           <div class="form-group">
-            <label for="email">Email</label>
+            <label data-key="login_email" for="email">Email</label>
             <input type="email" id="email" name="email" required />
           </div>
           <!-- Password -->
           <div>
-            <label for="form-group">Wachtwoord</label>
+            <label data-key="login_pass" for="form-group">Wachtwoord</label>
             <input type="password" name="pasword" id="password" required />
           </div>
           <!-- Login Button -->
-          <button type="submit" class="form-btn">Inloggen</button>
+          <button data-key="login_btn" type="submit" class="form-btn">Inloggen</button>
           <div class="or-divider">
-            <span>OF</span>
+            <span data-key="login_or">OF</span>
           </div>
 
-          <a href="#" class="form-btn-secondary" id="guest-login"
+          <a data-key="login_guest_btn" href="#" class="form-btn-secondary" id="guest-login"
             >Doorgaan als gast</a
           >
 
-          <p class="guest-mode-info">
+          <p data-key="login_guest_small" class="guest-mode-info">
             In gastmodus kun je StudentBuddy gebruiken, <br />
             maar je voortgang wordt niet opgeslagen.
           </p>

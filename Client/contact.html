@@ -34,7 +34,7 @@
         />
       </svg>
     </button>
-    <header>
+   <header>
       <!-- Top navigation bar with support branding -->
       <div class="navigation__top-bar">
         <div class="top-bar__container">
@@ -57,7 +57,7 @@
               </svg>
             </div>
             <span class="login-text">
-              <a href="login.html">Inloggen</a>
+              <a data-key="nav_login" href="login.html">Inloggen</a>
             </span>
           </div>
           <!-- Language Section -->
@@ -115,25 +115,25 @@
         <nav aria-label="Main Navigation">
           <!-- Site Branding (Logo or Name) -->
           <div>
-            <a class="site-branding-logo" href="index.html">StudentBuddy</a>
+            <a class="site-branding-logo" href="index.html">📚 StudentBuddy</a>
           </div>
           <!-- Navigation Menu with links to different sections of the site -->
           <div>
             <ul>
               <li>
-                <a href="index.html">Home</a>
+                <a data-key="nav_home" href="index.html">Home</a>
               </li>
               <li>
-                <a href="studie-tips.html">Studie Tips</a>
+                <a data-key="nav_studytips" href="studie-tips.html">Studie Tips</a>
               </li>
               <li>
-                <a href="ontspanning-tips.html">Ontspanning Tips</a>
+                <a data-key="nav_relaxationtips" href="ontspanning-tips.html">Ontspanning Tips</a>
               </li>
               <li>
-                <a href="studie-tools.html">Studie Tools</a>
+                <a data-key="nav_studytools" href="studie-tools.html">Studie Tools</a>
               </li>
               <li>
-                <a href="contact.html">Contact</a>
+                <a data-key="nav_contact" href="contact.html">Contact</a>
               </li>
             </ul>
           </div>
@@ -146,7 +146,7 @@
         <div class="container">
           <div class="hero-content">
             <h1 class="block-title">Contact</h1>
-            <p class="block-paragraph">Neem contact met ons op</p>
+            <p data-key="form_desc" class="block-paragraph">Neem contact met ons op</p>
           </div>
         </div>
       </section>
@@ -154,40 +154,40 @@
       <section class="container">
         <div class="form-container">
           <div id="form-header">
-            <h1 id="form-title">Formulier vragen / suggesties</h1>
+            <h1 data-key="form_detail" id="form-title">Formulier vragen / suggesties</h1>
             <p>
-              <strong
+              <strong data-key="form_detail"
                 >Vul het onderstaande formulier voor vragen of
                 suggesties.</strong
               >
             </p>
           </div>
           <form>
-            <label for="name">Je naam:<span class="required"> *</span></label>
+            <label data-key="form_name" for="name">Je naam:<span class="required"> *</span></label>
             <input type="text" id="name" name="name" required />
-            <p>Geef je naam en voornaam op</p>
+            <p data-key="form_fullname">Geef je naam en voornaam op</p>
 
-            <label for="email"
+            <label for="email" data-key="form_label_email"
               >E-mailadres UCLL:<span class="required"> *</span></label
             >
             <input type="email" id="email" name="email" required />
-            <p>Geef je e-mailadres op</p>
+            <p data-key="form_email">Geef je e-mailadres op</p>
 
-            <label for="choice"
+            <label for="choice" data-key="form_choose_option"
               >Kies een optie:<span class="required"> *</span></label
             >
             <select id="choice" name="choice">
-              <option value="question">Vraag</option>
-              <option value="suggestion">Suggestie</option>
+              <option data-key="form_choose_option_01" value="question">Vraag</option>
+              <option data-key="form_choose_option_02" value="suggestion">Suggestie</option>
             </select>
 
-            <label for="message"
+            <label for="message" data-key="form_option"
               >Jouw vraag / suggestie:<span class="required"> *</span></label
             >
             <textarea id="message" name="message" required></textarea>
-            <p>Geef je vraag of suggestie op</p>
+            <p data-key="form_questions">Geef je vraag of suggestie op</p>
 
-            <button type="submit" class="btn-primary">Indienen</button>
+            <button data-key="form_submit" type="submit" class="btn-primary">Indienen</button>
           </form>
         </div>
       </section>
@@ -200,17 +200,17 @@
 
       <div class="page-layout__divider"></div>
     </main>
-    <footer>
+        <footer>
       <div class="container">
         <!-- Study Guidance Call-to-Action -->
         <div class="footer__content-wrapper">
           <div>
-            <h2 class="footer__large-title">
+            <h2 data-key="footer_title_lg" class="footer__large-title">
               Heb je nood aan studiebegeleiding?
             </h2>
           </div>
           <div>
-            <h2 class="footer__small-title">Wij staan voor je klaar!</h2>
+            <h2 data-key="footer_title_sm" class="footer__small-title">Wij staan voor je klaar!</h2>
           </div>
         </div>
       </div>
@@ -220,7 +220,7 @@
       <div class="container">
         <!-- Bottom Footer -->
         <div class="footer__wrapper-bottom">
-          <small> © 2025 - Hogeschool UCLL </small>
+          <small data-key="footer_bottom"> © 2025 - Hogeschool UCLL </small>
           <img
             class="footer__logo"
             src="./images/Logo_UCLL_RGB.png"
