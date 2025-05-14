@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style/tools.css" />
     <script type="text/javascript" src="./script/language.js" defer></script>
     <script src="./script/tools.js" defer></script>
+    <script src="./script/darkmode.js" defer></script>
   </head>
   <body>
     <button id="theme-switch">
@@ -122,21 +123,11 @@
           <!-- Navigation Menu with links to different sections of the site -->
           <div>
             <ul>
-              <li>
-                <a href="index.html">Home</a>
-              </li>
-              <li>
-                <a href="studie-tips.html">Studie Tips</a>
-              </li>
-              <li>
-                <a href="ontspanning-tips.html">Ontspanning Tips</a>
-              </li>
-              <li>
-                <a href="studie-tools.html">Studie Tools</a>
-              </li>
-              <li>
-                <a href="contact.html">Contact</a>
-              </li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="studie-tips.html">Studie Tips</a></li>
+              <li><a href="ontspanning-tips.html">Ontspanning Tips</a></li>
+              <li><a href="studie-tools.html">Studie Tools</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
         </nav>
@@ -220,20 +211,25 @@
                   />
                   <button type="submit" id="add-todo">Toevoegen</button>
                 </form>
-
                 <div id="todo-count">0 taken</div>
                 <ul id="todo-list"></ul>
-
                 <button id="clear-completed" class="clear-button">
                   Verwijder Voltooide
                 </button>
-
                 <button id="reset-all" class="reset-button">
                   Reset Alle Taken
                 </button>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Achievement Badges Section -->
+      <section>
+        <div class="container">
+          <h2>Achievements</h2>
+          <div id="achievement-badges"></div>
         </div>
       </section>
 
@@ -267,7 +263,6 @@
         </div>
       </div>
     </div>
-
     <script src="./script/darkmode.js" defer></script>
   </body>
 </html>

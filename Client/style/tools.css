@@ -168,12 +168,12 @@
 .todo-item {
   display: flex;
   align-items: center;
-  padding: 0.75rem;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
   background-color: white;
   border-radius: 4px;
   margin-bottom: 0.5rem;
   transition: background-color 0.3s ease;
-  gap: 14em;
 }
 
 .todo-item:hover {
@@ -181,7 +181,11 @@
 }
 
 .todo-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
   cursor: pointer;
+  accent-color: var(--blue);
 }
 
 .todo-text {
