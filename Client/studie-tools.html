@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Studiegids - Contact</title>
+    <title>Studiegids - Studie Tools</title>
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/tools.css" />
     <script type="text/javascript" src="./script/language.js" defer></script>
+    <script src="./script/tools.js" defer></script>
+    <script src="./script/darkmode.js" defer></script>
   </head>
   <body>
     <button id="theme-switch">
@@ -120,89 +123,121 @@
           <!-- Navigation Menu with links to different sections of the site -->
           <div>
             <ul>
-              <li>
-                <a href="index.html">Home</a>
-              </li>
-              <li>
-                <a href="studie-tips.html">Studie Tips</a>
-              </li>
-              <li>
-                <a href="ontspanning-tips.html">Ontspanning Tips</a>
-              </li>
-              <li>
-                <a href="studie-tools.html">Studie Tools</a>
-              </li>
-              <li>
-                <a href="contact.html">Contact</a>
-              </li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="studie-tips.html">Studie Tips</a></li>
+              <li><a href="ontspanning-tips.html">Ontspanning Tips</a></li>
+              <li><a href="studie-tools.html">Studie Tools</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
         </nav>
       </div>
     </header>
+
     <main>
-      <!-- Hero section with welcome message -->
-      <section class="hero-section background-image-contact">
+      <section class="hero-section background-image-tools">
         <div class="container">
           <div class="hero-content">
-            <h1 class="block-title">Contact</h1>
-            <p class="block-paragraph">Neem contact met ons op</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="container">
-        <div class="form-container">
-          <div id="form-header">
-            <h1 id="form-title">Formulier vragen / suggesties</h1>
-            <p>
-              <strong
-                >Vul het onderstaande formulier voor vragen of
-                suggesties.</strong
-              >
+            <h1 class="block-title">Studie Tools</h1>
+            <p class="block-paragraph">
+              Ontdek hulpmiddelen die je studeren effectiever maken
             </p>
           </div>
-          <form>
-            <label for="name">Je naam:<span class="required"> *</span></label>
-            <input type="text" id="name" name="name" required />
-            <p>Geef je naam en voornaam op</p>
-
-            <label for="email"
-              >E-mailadres UCLL:<span class="required"> *</span></label
-            >
-            <input type="email" id="email" name="email" required />
-            <p>Geef je e-mailadres op</p>
-
-            <label for="choice"
-              >Kies een optie:<span class="required"> *</span></label
-            >
-            <select id="choice" name="choice">
-              <option value="question">Vraag</option>
-              <option value="suggestion">Suggestie</option>
-            </select>
-
-            <label for="message"
-              >Jouw vraag / suggestie:<span class="required"> *</span></label
-            >
-            <textarea id="message" name="message" required></textarea>
-            <p>Geef je vraag of suggestie op</p>
-
-            <button type="submit" class="btn-primary">Indienen</button>
-          </form>
         </div>
       </section>
+
+      <div class="page-layout__divider"></div>
 
       <section>
         <div class="container">
-          <p id="quote"></p>
+          <div class="tools-grid">
+            <!-- Pomodoro Timer Tool -->
+            <div class="tool-card">
+              <div class="tool-icon">⏱️</div>
+              <h2>Pomodoro Timer</h2>
+              <p>
+                Verhoog je productiviteit met de Pomodoro-techniek: 25 minuten
+                geconcentreerd werken, gevolgd door een korte pauze. Perfect
+                voor langdurige studiesessies.
+              </p>
+              <div class="pomodoro-container">
+                <div class="timer-display">
+                  <span id="minutes">25</span>:<span id="seconds">00</span>
+                </div>
+                <div class="timer-buttons">
+                  <button id="start-timer" class="timer-button">Start</button>
+                  <button id="pause-timer" class="timer-button" disabled>
+                    Pauze
+                  </button>
+                  <button id="reset-timer" class="timer-button">Reset</button>
+                </div>
+                <div class="timer-mode">
+                  <button id="pomodoro-mode" class="mode-button active">
+                    Pomodoro
+                  </button>
+                  <button id="short-break" class="mode-button">
+                    Korte Pauze
+                  </button>
+                  <button id="long-break" class="mode-button">
+                    Lange Pauze
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Todo List Tool -->
+            <div class="tool-card">
+              <div class="tool-icon">📝</div>
+              <h2>ToDo List</h2>
+              <p>
+                Houd taken bij en verhoog je productiviteit. Categoriseer je
+                taken en behoud overzicht!
+              </p>
+              <div class="todo-container">
+                <form id="todo-form">
+                  <div class="todo-category-select">
+                    <select id="todo-category">
+                      <option value="school">School</option>
+                      <option value="werk">Werk</option>
+                      <option value="persoonlijk">Persoonlijk</option>
+                      <option value="anders">Anders</option>
+                    </select>
+                  </div>
+                  <input
+                    type="text"
+                    id="todo-input"
+                    placeholder="Nieuwe taak toevoegen..."
+                    maxlength="50"
+                  />
+                  <button type="submit" id="add-todo">Toevoegen</button>
+                </form>
+                <div id="todo-count">0 taken</div>
+                <ul id="todo-list"></ul>
+                <button id="clear-completed" class="clear-button">
+                  Verwijder Voltooide
+                </button>
+                <button id="reset-all" class="reset-button">
+                  Reset Alle Taken
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievement Badges Section -->
+      <section>
+        <div class="container">
+          <h2>Achievements</h2>
+          <div id="achievement-badges"></div>
         </div>
       </section>
 
       <div class="page-layout__divider"></div>
     </main>
+
     <footer>
       <div class="container">
-        <!-- Study Guidance Call-to-Action -->
         <div class="footer__content-wrapper">
           <div>
             <h2 class="footer__large-title">
@@ -215,22 +250,19 @@
         </div>
       </div>
     </footer>
-    <!-- Bottom Footer Section -->
+
     <div>
       <div class="container">
-        <!-- Bottom Footer -->
         <div class="footer__wrapper-bottom">
-          <small> © 2025 - Hogeschool UCLL </small>
+          <small>© 2025 - Hogeschool UCLL</small>
           <img
             class="footer__logo"
             src="./images/Logo_UCLL_RGB.png"
             alt="Footer Logo UCLL"
           />
         </div>
-        <!-- Bottom Footer -->
       </div>
     </div>
-    <script type="text/javascript" src="./script/contact.js"></script>
-    <script type="text/javascript" src="./script/darkmode.js"></script>
+    <script src="./script/darkmode.js" defer></script>
   </body>
 </html>

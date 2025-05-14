@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Studiegids - Contact</title>
+    <title>Studiegids - Home</title>
     <link rel="stylesheet" href="./style/style.css" />
+    <script type="text/javascript" src="./script/darkmode.js" defer></script>
+    <script type="text/javascript" src="./script/quote.js" defer></script>
     <script type="text/javascript" src="./script/language.js" defer></script>
   </head>
   <body>
+    <!-- Feature: Darkmode Switch -->
     <button id="theme-switch">
       <!-- Dark Mode Icon -->
       <svg
@@ -115,7 +118,7 @@
         <nav aria-label="Main Navigation">
           <!-- Site Branding (Logo or Name) -->
           <div>
-            <a class="site-branding-logo" href="index.html">StudentBuddy</a>
+            <a class="site-branding-logo" href="index.html">📚 StudentBuddy</a>
           </div>
           <!-- Navigation Menu with links to different sections of the site -->
           <div>
@@ -140,97 +143,36 @@
         </nav>
       </div>
     </header>
-    <main>
-      <!-- Hero section with welcome message -->
-      <section class="hero-section background-image-contact">
-        <div class="container">
-          <div class="hero-content">
-            <h1 class="block-title">Contact</h1>
-            <p class="block-paragraph">Neem contact met ons op</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="container">
-        <div class="form-container">
-          <div id="form-header">
-            <h1 id="form-title">Formulier vragen / suggesties</h1>
-            <p>
-              <strong
-                >Vul het onderstaande formulier voor vragen of
-                suggesties.</strong
-              >
-            </p>
-          </div>
-          <form>
-            <label for="name">Je naam:<span class="required"> *</span></label>
-            <input type="text" id="name" name="name" required />
-            <p>Geef je naam en voornaam op</p>
-
-            <label for="email"
-              >E-mailadres UCLL:<span class="required"> *</span></label
-            >
+    <main class="form-wrapper">
+      <div class="container">
+        <h1 class="form-title">Inloggen bij StudentBuddy</h1>
+        <form action="#" method="post">
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
             <input type="email" id="email" name="email" required />
-            <p>Geef je e-mailadres op</p>
+          </div>
+          <!-- Password -->
+          <div>
+            <label for="form-group">Wachtwoord</label>
+            <input type="password" name="pasword" id="password" required />
+          </div>
+          <!-- Login Button -->
+          <button type="submit" class="form-btn">Inloggen</button>
+          <div class="or-divider">
+            <span>OF</span>
+          </div>
 
-            <label for="choice"
-              >Kies een optie:<span class="required"> *</span></label
-            >
-            <select id="choice" name="choice">
-              <option value="question">Vraag</option>
-              <option value="suggestion">Suggestie</option>
-            </select>
+          <a href="#" class="form-btn-secondary" id="guest-login"
+            >Doorgaan als gast</a
+          >
 
-            <label for="message"
-              >Jouw vraag / suggestie:<span class="required"> *</span></label
-            >
-            <textarea id="message" name="message" required></textarea>
-            <p>Geef je vraag of suggestie op</p>
-
-            <button type="submit" class="btn-primary">Indienen</button>
-          </form>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <p id="quote"></p>
-        </div>
-      </section>
-
-      <div class="page-layout__divider"></div>
+          <p class="guest-mode-info">
+            In gastmodus kun je StudentBuddy gebruiken, <br />
+            maar je voortgang wordt niet opgeslagen.
+          </p>
+        </form>
+      </div>
     </main>
-    <footer>
-      <div class="container">
-        <!-- Study Guidance Call-to-Action -->
-        <div class="footer__content-wrapper">
-          <div>
-            <h2 class="footer__large-title">
-              Heb je nood aan studiebegeleiding?
-            </h2>
-          </div>
-          <div>
-            <h2 class="footer__small-title">Wij staan voor je klaar!</h2>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Bottom Footer Section -->
-    <div>
-      <div class="container">
-        <!-- Bottom Footer -->
-        <div class="footer__wrapper-bottom">
-          <small> © 2025 - Hogeschool UCLL </small>
-          <img
-            class="footer__logo"
-            src="./images/Logo_UCLL_RGB.png"
-            alt="Footer Logo UCLL"
-          />
-        </div>
-        <!-- Bottom Footer -->
-      </div>
-    </div>
-    <script type="text/javascript" src="./script/contact.js"></script>
-    <script type="text/javascript" src="./script/darkmode.js"></script>
   </body>
 </html>

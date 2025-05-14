@@ -1,3 +1,5 @@
+
+
 /* Stijl voor ontspanningstips pagina */
 .video-music, .moppen-generator, .darkmode-toggle, .ademhalingsoefening, .home-workout, .Wandeling, .rustgevende-muziek {
     text-align: center;
@@ -74,7 +76,7 @@ section {
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
   }
 
-  button {
+  .mop-button {
     padding: 12px 24px;
     font-size: 1rem;
     background: var(--gradient);
@@ -84,7 +86,7 @@ section {
     transition: background 0.3s, transform 0.2s;
   }
   
-  button:hover {
+  .mop-button:hover {
     transform: translateY(-2px);
   }
 
@@ -124,8 +126,20 @@ section {
     margin: 0 auto 1rem;
     line-height: 1.6;
   }
+
+  .darkmode .intro-ontspanning {
+    background-color: #333;
+}
+
+.darkmode .intro-ontspanning p {
+    color: #ccc;
+}
   
   .hero-section {
     border-radius: 0 !important;
   }
+
+.darkmode section {
+  background-color: #333;
+}
   
