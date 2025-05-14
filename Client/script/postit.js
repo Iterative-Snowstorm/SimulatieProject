@@ -1,7 +1,9 @@
 // ================= STUDY TIPS WITH ACHIEVEMENTS =================
-
+const currentUser = localStorage.getItem("currentUser") || "guest";
 // Track which study tips were viewed
-let achievements = JSON.parse(localStorage.getItem("achievements")) || {
+let achievements = JSON.parse(
+  localStorage.getItem(`user_${currentUser}_achievements`)
+) || {
   pomodorosCompleted: 0,
   todosCompleted: 0,
   relaxationsViewed: 0,
@@ -10,7 +12,10 @@ let achievements = JSON.parse(localStorage.getItem("achievements")) || {
 };
 
 function saveAchievements() {
-  localStorage.setItem("achievements", JSON.stringify(achievements));
+  localStorage.setItem(
+    `user_${currentUser}_achievements`,
+    JSON.stringify(achievements)
+  );
 }
 
 function checkStudyTipAchievements() {

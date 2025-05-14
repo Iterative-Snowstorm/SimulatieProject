@@ -6,6 +6,7 @@
     <title>Studiegids - Contact</title>
     <link rel="stylesheet" href="./style/style.css" />
     <script type="text/javascript" src="./script/language.js" defer></script>
+    <script type="text/javascript" src="./script/login-status.js" defer></script>
   </head>
   <body>
     <button id="theme-switch">
@@ -39,7 +40,7 @@
       <div class="navigation__top-bar">
         <div class="top-bar__container">
           <!-- Login Section -->
-          <div class="auth-section">
+          <div class="auth-section" id="auth-section">
             <div class="user-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +58,7 @@
               </svg>
             </div>
             <span class="login-text">
-              <a href="login.html">Inloggen</a>
+              <a href="login.html" id="login-link">Inloggen</a>
             </span>
           </div>
           <!-- Language Section -->
