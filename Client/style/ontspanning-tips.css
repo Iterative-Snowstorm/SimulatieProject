@@ -135,6 +135,10 @@ section {
     color: #ccc;
 }
   
+  .hero-section {
+    border-radius: 0 !important;
+  }
+
 .darkmode section {
   background-color: #333;
 }
