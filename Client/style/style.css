@@ -127,6 +127,43 @@ body {
 ========================================================================================================================
 */
 
+#auth-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* spacing between username link and logout */
+}
+
+/* Style the username text (formerly login link) */
+#login-link.user-name {
+  color: var(--link-color, #ffffff);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Logout button styling */
+#logout-btn {
+  background: none;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  font: inherit;            /* inherit font-family/size */
+  color: var(--link-color, #ffffff);
+  cursor: pointer;
+  border-radius: 0.25rem;   /* small rounding */
+  transition: background 0.2s;
+}
+
+/* Hover/focus states */
+#logout-btn:hover,
+#logout-btn:focus {
+  background: rgba(0, 123, 255, 0.1);
+  outline: none;
+}
+
+/* Optional: active/clicked state */
+#logout-btn:active {
+  background: rgba(0, 123, 255, 0.2);
+}
+
 header {
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
@@ -309,6 +346,23 @@ ul a:hover {
 }
 
 .hero-section.background-image-relaxing {
+  height: 30svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section.background-image-tools .hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 0;
+  text-align: center;
+}
+
+.hero-section.background-image-tools {
   height: 30svh;
   display: flex;
   justify-content: center;

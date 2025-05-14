@@ -8,6 +8,7 @@
     <script type="text/javascript" src="./script/darkmode.js" defer></script>
     <script type="text/javascript" src="./script/quote.js" defer></script>
     <script type="text/javascript" src="./script/language.js" defer></script>
+    <script type="text/javascript" src="./script/login.js" defer></script>
   </head>
   <body>
     <!-- Feature: Darkmode Switch -->
@@ -42,7 +43,7 @@
       <div class="navigation__top-bar">
         <div class="top-bar__container">
           <!-- Login Section -->
-          <div class="auth-section">
+          <div class="auth-section" id="auth-section">
             <div class="user-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +61,7 @@
               </svg>
             </div>
             <span class="login-text">
-              <a data-key="nav_login" href="login.html">Inloggen</a>
+              <a href="login.html" id="login-link">Inloggen</a>
             </span>
           </div>
           <!-- Language Section -->
@@ -156,8 +157,8 @@
           </div>
           <!-- Password -->
           <div>
-            <label data-key="login_pass" for="form-group">Wachtwoord</label>
-            <input type="password" name="pasword" id="password" required />
+            <label for="form-group">Wachtwoord</label>
+            <input type="password" name="password" id="password" required />
           </div>
           <!-- Login Button -->
           <button data-key="login_btn" type="submit" class="form-btn">Inloggen</button>

@@ -1,6 +1,7 @@
 // ================= STUDY TOOLS (Pomodoro + Todo) WITH ACHIEVEMENTS =================
 
 document.addEventListener("DOMContentLoaded", function () {
+  const currentUser = localStorage.getItem("currentUser") || "guest";
   // -------------------- State for Pomodoro --------------------
   let timer;
   let minutes = 25;
@@ -9,7 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let pomodoroCount = parseInt(localStorage.getItem("pomodoroCount")) || 0;
 
   // -------------------- State for Achievements --------------------
-  let achievements = JSON.parse(localStorage.getItem("achievements")) || {
+  let achievements = JSON.parse(
+    localStorage.getItem(`user_${currentUser}_achievements`)
+  ) || {
     pomodorosCompleted: 0,
     todosCompleted: 0,
     relaxationsViewed: 0,
@@ -18,7 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   function saveAchievements() {
-    localStorage.setItem("achievements", JSON.stringify(achievements));
+    localStorage.setItem(
+      `user_${currentUser}_achievements`,
+      JSON.stringify(achievements)
+    );
   }
 
   function checkAchievements() {
@@ -155,11 +161,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const resetAllBtn = document.getElementById("reset-all");
   const categorySelect = document.getElementById("todo-category");
 
-  let todosByCategory =
-    JSON.parse(localStorage.getItem("todosByCategory")) || {};
-
+  let todosByCategory = JSON.parse(
+    localStorage.getItem(`user_${currentUser}_todosByCategory`)
+  ) || {};
+  
   function saveTodos() {
-    localStorage.setItem("todosByCategory", JSON.stringify(todosByCategory));
+    localStorage.setItem(
+      `user_${currentUser}_todosByCategory`,
+      JSON.stringify(todosByCategory)
+    );
   }
 
   function addTodo(event) {
