@@ -5,11 +5,11 @@ document.querySelector("form").addEventListener("submit", function(e) {
     return alert("Vul je e‑mail in!");
   }
   localStorage.setItem("currentUser", email);
-  window.location.href = "studie-tools.html";
+  window.location.href = "index.html";
 });
 
 document.getElementById("guest-login").addEventListener("click", (e) => {
   e.preventDefault();
   localStorage.setItem("currentUser", "guest");
-  window.location.href = "studie-tools.html";
+  window.location.href = "index.html";
 });

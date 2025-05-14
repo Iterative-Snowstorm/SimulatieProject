@@ -352,6 +352,23 @@ ul a:hover {
   align-items: center;
 }
 
+.hero-section.background-image-tools .hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 0;
+  text-align: center;
+}
+
+.hero-section.background-image-tools {
+  height: 30svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* 
 ========================================================================================================================
