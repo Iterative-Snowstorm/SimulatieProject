@@ -58,73 +58,65 @@ let timer = null;
 let isPaused = false;
 
 function updateDisplay() {
-    const minutes = Math.floor(sec / 60);
-    const seconds = sec % 60;
-    document.getElementById('timer').innerHTML = 
-        `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  const minutes = Math.floor(sec / 60);
+  const seconds = sec % 60;
+  document.getElementById('timer').innerHTML =
+    `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
 
 function updateDisplay() {
-    const minutes = Math.floor(sec / 60);
-    const seconds = sec % 60;
-    document.getElementById('timer').innerHTML = 
-        `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  const minutes = Math.floor(sec / 60);
+  const seconds = sec % 60;
+  document.getElementById('timer').innerHTML =
+    `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
 function timerVoorWandeling() {
-    if (timer !== null || sec <= 0) return;
+  if (timer !== null || sec <= 0) return;
 
-    timer = setInterval(() => {
-        if (!isPaused) {
-            sec--;
+  timer = setInterval(() => {
+    if (!isPaused) {
+      sec--;
 
-            if (sec < 0) {
-                clearInterval(timer);
-                timer = null;
-                document.getElementById('timer').innerHTML = "Tijd om terug te keren!";
-                return;
-            }
+      if (sec < 0) {
+        clearInterval(timer);
+        timer = null;
+        document.getElementById('timer').innerHTML = "Tijd om terug te keren!";
+        return;
+      }
 
-            updateDisplay();
-        }
-    }, 1000);
-}
-
-function pauseTimer() {
-    isPaused = !isPaused;
-}
-
-function resetTimer() {
-    clearInterval(timer);
-    timer = null;
-    sec = 600;
-    isPaused = false;
-    updateDisplay();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    const ademhaling = document.querySelector(".ademhaling");
-    if (ademhaling) {
-      ademhaling.addEventListener("click", startAdemhalingsoefening);
-    }
-
-    const startBtn = document.getElementById("startTimerBtn");
-    const pauseBtn = document.getElementById("pauseTimerBtn");
-    const resetBtn = document.getElementById("resetTimerBtn");
-
-    if (startBtn) startBtn.addEventListener("click", timerVoorWandeling);
-    if (pauseBtn) pauseBtn.addEventListener("click", pauseTimer);
-    if (resetBtn) resetBtn.addEventListener("click", resetTimer);
-  });
-
-    if (sec < 0) {
-      clearInterval(timer);
-      document.getElementById("timer").innerHTML = "Tijd om terug te keren!";
-      incrementRelaxation();
+      updateDisplay();
     }
   }, 1000);
 }
+
+function pauseTimer() {
+  isPaused = !isPaused;
+}
+
+function resetTimer() {
+  clearInterval(timer);
+  timer = null;
+  sec = 600;
+  isPaused = false;
+  updateDisplay();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const ademhaling = document.querySelector(".ademhaling");
+  if (ademhaling) {
+    ademhaling.addEventListener("click", startAdemhalingsoefening);
+  }
+
+  const startBtn = document.getElementById("startTimerBtn");
+  const pauseBtn = document.getElementById("pauseTimerBtn");
+  const resetBtn = document.getElementById("resetTimerBtn");
+
+  if (startBtn) startBtn.addEventListener("click", timerVoorWandeling);
+  if (pauseBtn) pauseBtn.addEventListener("click", pauseTimer);
+  if (resetBtn) resetBtn.addEventListener("click", resetTimer);
+});
 
 // Setup event listeners once the page is loaded
 document.addEventListener("DOMContentLoaded", () => {
