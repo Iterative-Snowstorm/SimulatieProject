@@ -945,7 +945,9 @@ footer {
 
 /* Tool Card Styling */
 .tool-card {
-  background-color: var(--light-gray);
+  background-color: var(--base-variant);
+  color: var(--text-color);
+  box-shadow: var(--shadow);
   border-radius: 8px;
   padding: 2rem;
   display: flex;

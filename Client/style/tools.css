@@ -293,6 +293,11 @@
   background-color: var(--red);
 }
 
+/* .darkmode .tool-card {
+  background-color: #333;
+  color: #fff;
+} */
+
 /* ================= Responsive ================= */
 
 @media screen and (width < 992px) {
